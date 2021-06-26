@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance Cost</title>
+</head>
+<body>
+
+	<h1>Insurance Cost Prediction</h1>
+	<form action = "{{ url_for('predict') }}" method = "POST">
+		<input type = "text" name="age" placeholder="age" required/><br>
+		<input type = "text" name="sex" placeholder="sex (0/1)" required/><br>
+		<input type = "text" name="bmi" placeholder="bmi" required/><br>
+		<input type = "text" name="children" placeholder="children" required/><br>
+		<input type = "text" name="smoker" placeholder="smoker" required/><br>
+		<input type = "text" name="region" placeholder="region" required/><br>
+		
+		<button type = "submit" > Predict Cost</button>
+	</form>
+	<br><br>
+	<h2>{{ prediction_text }}</h2>
+
+</body>
+</html>
