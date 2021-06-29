@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wine Quality</title>
+	<link rel = "stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+
+	<h1>Wine Quality Prediction</h1>
+
+	
+	<form  action = "{{ url_for('process') }}" method = "POST">
+		<input type = "text" name="fixed_acidity" placeholder="fixed acidity" required/><br>
+		<input type = "text" name="volatile_acidity" placeholder="volatile acidity" required/><br>
+		<input type = "text" name="citric_acid" placeholder="citric acid" required/><br>
+		<input type = "text" name="residual_sugar" placeholder="residual sugar" required/><br>
+		<input type = "text" name="chlorides" placeholder="chlorides" required/><br>
+		<input type = "text" name="free_sulfur_dioxide" placeholder="free sulfur dioxide" required/><br>
+		<input type = "text" name="total_sulfur_dioxide" placeholder="total sulfur dioxide" required/><br>
+		<input type = "text" name="density" placeholder="density" required/><br>
+		<input type = "text" name="pH" placeholder="pH" required/><br>
+		<input type = "text" name="sulphates" placeholder="sulphates" required/><br>
+		<input type = "text" name="alcohol" placeholder="alcohol" required/><br>
+		<input type = "text" name="color" placeholder="color" required/><br>
+
+		<input type = "submit" > Predict Salary</button>
+	</form>
+	<br><br>
+	<h2>{{ predicted_test }}</h2>
+
+</body>
+</html>
