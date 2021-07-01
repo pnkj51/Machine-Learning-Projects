@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Titanic Index</title>
+</head>
+<body>
+	<form action="{{ url_for('submit_new') }}" method="POST">
+
+		<table>
+			<tr>
+				<td><h1>Titanic Survival Prediction</h1></td>
+				<td> <img src="/static/images/titanic.jpg" height="400" width="800"> </td>	
+			</tr>
+			<tr><td> <h3>Cabin and Port Details</h3> </td></tr>
+
+			<tr>
+				<td>Port</td>
+				<td> 
+					<select name="selected_embarked">
+						<option value="{{ selected_embarked }}" selected>{{ selected_embarked }}</option>
+						<option>Cherbourg</option>
+						<option>Queenstown</option>
+						<option>Southampton</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Fare</td>
+				<td> <input type="number" name="selected_fare" value="{{ selected_fare }}" placeholder="Enter Fare"> </td>
+			</tr>
+
+			<tr>
+				<td>Age</td>
+				<td> 
+					<select name="selected_age" >
+						<option value="{{selected_age}}">{{selected_age}}</option>
+
+						{% for age in range(0,100) %}
+						<option>{{age}}</option>
+						{% endfor %}
+					</select> 
+				</td>
+			</tr>
+
+			<tr>
+				<td>Title</td>
+				<td>
+					<select name="selected_title">
+						<option value="{{selected_title}}" >{{selected_title}}</option>
+						<option value="Dr." >Dr.</option>
+						<option value="Master." >Master.</option>
+						<option value="Miss." >Miss.</option>
+						<option value="Mr." >Mr.</option>
+						<option value="Mrs." >Mrs.</option>
+						<option value="Unknown." >Unknown</option>
+						<option value="Rev." >Rev.</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<select name="selected_gender">
+						<option value="{{selected_gender}}">{{selected_gender}}</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Class</td>
+				<td>
+					<select name="selected_class">
+						<option value="{{selected_class}}">{{selected_class}}</option>
+						<option value="First">First</option>
+						<option value="Second">Second</option>
+						<option value="Third">Third</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Cabin</td>
+				<td>
+					<select name="selected_cabin">
+						<option value="{{selected_cabin}}">{{selected_cabin}}</option>
+						<option >A</option>
+						<option >B</option>
+						<option >C</option>
+						<option >D</option>
+						<option >E</option>
+						<option >F</option>
+						<option >G</option>
+						<option >T</option>
+						<option >Unknown</option>
+
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Number of Siblings/Spouses</td>
+				<td>
+					<select name="selected_sibsp" >
+						<option value="{{selected_sibsp}}">{{selected_sibsp}}</option>
+
+						{% for sibsp in range(0,10) %}
+						<option>{{sibsp}}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Number of Parents/Children</td>
+				<td>
+					<select name="selected_parch" >
+						<option value="{{selected_parch}}">{{selected_parch}}</option>
+
+						{% for parch in range(0,10) %}
+						<option>{{parch}}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+
+			
+
+
+		</table>
+		<br><br>
+		<hr>
+
+		<table>
+			<tr>
+				<td>{{model_results}}</td>
+				<td>{{model_plot}}</td>
+			</tr>
+		</table>
+
+		<button type="submit" >All Board</button>
+	</form>
+
+</body>
+</html>
